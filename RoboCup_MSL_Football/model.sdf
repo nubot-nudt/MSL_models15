@@ -1,0 +1,58 @@
+<?xml version='1.0'?>
+<sdf version='1.4'>
+<!-- mass 0.41kg  -->
+<!-- inertia 3.2e-03kg m^2 -->
+
+<model name='football'>
+      <static>0</static>
+      <link name='ball'>
+        <pose>0 0 0.11 0 -0 0</pose>
+        <inertial>
+          <mass>0.41</mass>
+          <inertia>
+            <ixx>3.2e-03</ixx>
+            <iyy>3.2e-03</iyy>
+            <izz>3.2e-03</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <sphere>
+              <radius>0.11</radius>
+            </sphere>
+          </geometry>
+          <surface>
+            <bounce>
+              <restitution_coefficient>1</restitution_coefficient>
+            </bounce>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>0.11 0.11 0.11</scale>
+              <uri>model://RoboCup_MSL_Football/meshes/ball.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0.005</linear>
+          <angular>0.005</angular>
+        </velocity_decay>
+        <gravity>1</gravity>
+      </link>
+      <pose>0 0 0 0 -0 0</pose>
+    </model>
+</sdf>
